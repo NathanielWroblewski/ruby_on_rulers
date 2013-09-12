@@ -1,6 +1,8 @@
 require 'railslite/version'
 require 'railslite/active_support_array'
 require 'railslite/routing'
+require 'railslite/util'
+require 'railslite/dependencies'
 
 module Railslite
   class Application
