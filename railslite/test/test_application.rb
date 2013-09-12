@@ -10,7 +10,7 @@ class RailsliteAppTest < Test::Unit::TestCase
     TestApp.new
   end
 
-  def test_requrest
+  def test_request
     get '/'
 
     assert last_response.ok?
