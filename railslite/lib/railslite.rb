@@ -3,6 +3,7 @@ require 'railslite/active_support_array'
 require 'railslite/routing'
 require 'railslite/util'
 require 'railslite/dependencies'
+require 'railslite/controller'
 
 module Railslite
   class Application
@@ -18,14 +19,6 @@ module Railslite
       `echo debug > debug.txt`;
         [200, {'Content-Type' => 'text/html'},
           [text]]
-    end
-  end
-
-  class Controller
-    attr_reader :env
-
-    def initialize(env)
-      @env = env
     end
   end
 end

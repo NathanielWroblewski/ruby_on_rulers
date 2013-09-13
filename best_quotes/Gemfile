@@ -1,3 +1,7 @@
 source :rubygems
 
 gem 'railslite', path: '../railslite'
+
+group :development do
+  gem 'rerun'
+end

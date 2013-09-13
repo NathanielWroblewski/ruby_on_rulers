@@ -1,6 +1,15 @@
 require_relative 'test_helper'
 
+class TestController < Railslite::Controller
+  def index
+    'not rendering a view'
+  end
+end
+
 class TestApp < Railslite::Application
+  def get_controller_and_action(env)
+    [TestController, 'index']
+  end
 end
 
 class RailsliteAppTest < Test::Unit::TestCase
@@ -11,10 +20,10 @@ class RailsliteAppTest < Test::Unit::TestCase
   end
 
   def test_request
-    get '/'
+    get '/test/index'
 
     assert last_response.ok?
     body = last_response.body
-    assert body['Hello']
+    assert body['view']
   end
 end
